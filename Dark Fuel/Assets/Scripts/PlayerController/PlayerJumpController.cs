@@ -50,6 +50,10 @@ namespace CaptainCoder.DarkFuel
             {
                 IsGrounded = true;
             }
+            else
+            {
+                IsGrounded = false;
+            }
 
         }
     }

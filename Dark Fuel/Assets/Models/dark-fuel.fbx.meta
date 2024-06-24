@@ -3,7 +3,37 @@ guid: 9ad6e9455c802c045af19e6343f5770d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: 65d2191a2c5fced41a304272fea996d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes
+    second: {fileID: 2100000, guid: a1febd34759bdb448ae8939554160e1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face Dimples
+    second: {fileID: 2100000, guid: feb954c1a14baf74db28268b0ffa69a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FaceBlack
+    second: {fileID: 2100000, guid: 1475b55852c4c1c4c890c5cbbb308261, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 77b053b227f91964fa270a1dec8e3b0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: 6b46426485c073040baf344ad114c24e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -11,8 +11,7 @@ namespace CaptainCoder.DarkFuel
         private PlayerComponents _playerComponents;
         private float ForwardAxis => Input.GetAxis("Vertical");
         private float RightAxis => -Input.GetAxis("Horizontal");
-        private float MaxSpeed = 10;
-        public float Speed = 500;
+        public float Speed = 20;
         // Start is called before the first frame update
         void Awake()
         {
@@ -38,7 +37,6 @@ namespace CaptainCoder.DarkFuel
             while (timeRemaining > 0)
             {
                 float percent = 1 - (timeRemaining / DirectionChangeSpeed);
-                Debug.Log(percent);
                 _playerComponents.Model.transform.rotation = Quaternion.Lerp(startRotation, targetRotation, percent);
                 yield return new WaitForEndOfFrame();
                 timeRemaining -= Time.deltaTime;
@@ -49,8 +47,8 @@ namespace CaptainCoder.DarkFuel
         // Update is called once per frame
         void FixedUpdate()
         {
-            _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.WithXZ(InputDirection * Speed * Time.fixedDeltaTime);
-            _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.ClampXZMagnitude(MaxSpeed);
+            _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.WithXZ(InputDirection * Speed);
+            _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.ClampXZMagnitude(Speed);
             _playerComponents.Animator.SetFloat("Velocity", _playerComponents.RigidBody.velocity.XZ().normalized.magnitude);
         }
     }
