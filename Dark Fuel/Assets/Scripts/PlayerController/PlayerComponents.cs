@@ -7,6 +7,7 @@ namespace CaptainCoder.DarkFuel
     {
         public Rigidbody RigidBody; 
         public Animator Animator;
+        public GameObject Model;
 
         public static bool ChakrasAligned { get; internal set; } = false;
 

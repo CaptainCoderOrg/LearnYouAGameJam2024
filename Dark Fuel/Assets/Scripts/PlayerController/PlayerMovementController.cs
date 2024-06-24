@@ -1,5 +1,6 @@
 using UnityEngine;
 using CaptainCoder.UnityEngine;
+using System.Collections;
 namespace CaptainCoder.DarkFuel
 {
 
@@ -23,8 +24,26 @@ namespace CaptainCoder.DarkFuel
             InputDirection = new (ForwardAxis, 0, RightAxis);
             if (InputDirection.magnitude > 0.1)
             {
-                transform.rotation = Quaternion.LookRotation(InputDirection);
+                StopAllCoroutines();
+                StartCoroutine(RotateCup(InputDirection));
             }            
+        }
+
+        public float DirectionChangeSpeed = 0.1f;
+        private IEnumerator RotateCup(Vector3 inputDirection)
+        {
+            float timeRemaining = DirectionChangeSpeed;
+            Quaternion startRotation = _playerComponents.Model.transform.rotation;
+            Quaternion targetRotation = Quaternion.LookRotation(inputDirection);
+            while (timeRemaining > 0)
+            {
+                float percent = 1 - (timeRemaining / DirectionChangeSpeed);
+                Debug.Log(percent);
+                _playerComponents.Model.transform.rotation = Quaternion.Lerp(startRotation, targetRotation, percent);
+                yield return new WaitForEndOfFrame();
+                timeRemaining -= Time.deltaTime;
+            }
+            _playerComponents.Model.transform.rotation = targetRotation;
         }
 
         // Update is called once per frame

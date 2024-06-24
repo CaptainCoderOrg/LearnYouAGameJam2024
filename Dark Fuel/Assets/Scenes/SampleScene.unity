@@ -277,7 +277,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 963194228}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1504562967}
   m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
 --- !u!43 &808632382
 Mesh:
@@ -854,8 +854,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: -50
+  far clip plane: 50
   field of view: 60
   orthographic: 1
   orthographic size: 10
@@ -941,6 +941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9ad6e9455c802c045af19e6343f5770d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8196685272559906219, guid: 9ad6e9455c802c045af19e6343f5770d, type: 3}
       propertyPath: m_CastShadows
       value: 2
@@ -1019,6 +1023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RigidBody: {fileID: 0}
   Animator: {fileID: 0}
+  Model: {fileID: 1455753493}
 --- !u!54 &1504562966
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1061,6 +1066,7 @@ Transform:
   m_Children:
   - {fileID: 1455753502}
   - {fileID: 231819190}
+  - {fileID: 708594188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1504562968
@@ -1076,6 +1082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 500
+  DirectionChangeSpeed: 0.2
 --- !u!114 &1504562969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,11 +1097,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroundCheck: {fileID: 231819190}
   CheckDistance: 0.2
+  BoxCheckSize: {x: 0.25, y: 0.1, z: 0.25}
   GroundLayers:
     serializedVersion: 2
     m_Bits: 64
   <IsGrounded>k__BackingField: 1
-  <JumpForce>k__BackingField: 500
+  <JumpForce>k__BackingField: 1000
 --- !u!136 &1504562970
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1189,4 +1197,3 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1504562967}
   - {fileID: 865655299}
-  - {fileID: 708594188}
