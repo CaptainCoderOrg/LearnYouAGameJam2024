@@ -8,6 +8,7 @@ namespace CaptainCoder.DarkFuel
         private PlayerComponents _playerComponents;
         public Transform GroundCheck;
         public float CheckDistance = 1;
+        public Vector3 BoxCheckSize = new (.25f, .1f, .25f);
         public LayerMask GroundLayers;
         [field: SerializeField]
         public bool IsGrounded { get; private set; } = true;
@@ -41,27 +42,15 @@ namespace CaptainCoder.DarkFuel
                 _playerComponents.RigidBody.AddForce(Vector3.up * JumpForce);
             }
         }
-
+        
         private void CheckGround()
         {
-            Ray ray = new() { origin = GroundCheck.position, direction = Vector3.down };
-            Vector3 extents = new (CheckDistance, CheckDistance, CheckDistance);
-            bool isHit = Physics.BoxCast(GroundCheck.position, extents, Vector3.down, out RaycastHit hitInfo);
+            bool isHit = Physics.BoxCast(GroundCheck.position, BoxCheckSize, Vector3.down, out RaycastHit hitInfo, Quaternion.identity, CheckDistance, GroundLayers);
             if (isHit)
             {
                 IsGrounded = true;
             }
-            else
-            {
-                IsGrounded = false;
-            }   
 
-        }
-
-        void OnDrawGizmosSelected()
-        {
-            Vector3 extents = new (CheckDistance, CheckDistance, CheckDistance);
-            Gizmos.DrawCube(GroundCheck.position, extents);
         }
     }
 }

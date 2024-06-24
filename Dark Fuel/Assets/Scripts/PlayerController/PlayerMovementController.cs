@@ -6,9 +6,10 @@ namespace CaptainCoder.DarkFuel
     [RequireComponent(typeof(PlayerComponents))]
     public class PlayerMovementController : MonoBehaviour
     {
+        public Vector3 InputDirection { get; private set; }
         private PlayerComponents _playerComponents;
         private float ForwardAxis => Input.GetAxis("Vertical");
-        private float RightAxis => Input.GetAxis("Horizontal");
+        private float RightAxis => -Input.GetAxis("Horizontal");
         private float MaxSpeed = 10;
         public float Speed = 500;
         // Start is called before the first frame update
@@ -17,11 +18,19 @@ namespace CaptainCoder.DarkFuel
             _playerComponents = GetComponent<PlayerComponents>();
         }
 
+        void Update()
+        {
+            InputDirection = new (ForwardAxis, 0, RightAxis);
+            if (InputDirection.magnitude > 0.1)
+            {
+                transform.rotation = Quaternion.LookRotation(InputDirection);
+            }            
+        }
+
         // Update is called once per frame
         void FixedUpdate()
         {
-            _playerComponents.RigidBody.AddForce(transform.forward * Speed * ForwardAxis * Time.deltaTime);
-            _playerComponents.RigidBody.AddForce(transform.right * Speed * RightAxis * Time.deltaTime);
+            _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.WithXZ(InputDirection * Speed * Time.fixedDeltaTime);
             _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.ClampXZMagnitude(MaxSpeed);
             _playerComponents.Animator.SetFloat("Velocity", _playerComponents.RigidBody.velocity.XZ().normalized.magnitude);
         }
