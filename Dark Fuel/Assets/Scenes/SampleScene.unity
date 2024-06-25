@@ -204,7 +204,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 1.6462243
@@ -226,7 +226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &675092393
 Transform:
   m_ObjectHideFlags: 0
@@ -2698,7 +2698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1432494508
 Transform:
   m_ObjectHideFlags: 0
@@ -2974,7 +2974,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <IsGrounded>k__BackingField: 1
-  <JumpForce>k__BackingField: 700
+  <JumpForce>k__BackingField: 850
 --- !u!850595691 &1512042377
 LightingSettings:
   m_ObjectHideFlags: 0

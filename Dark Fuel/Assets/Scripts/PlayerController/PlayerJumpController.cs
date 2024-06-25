@@ -29,6 +29,7 @@ namespace CaptainCoder.DarkFuel
             if (Input.GetButtonDown("Jump") && IsGrounded)
             {
                 _jumpStarted = true;
+                _playerComponents.Animator.SetBool("jumpStarted", true);
             }
         }
 
@@ -38,7 +39,9 @@ namespace CaptainCoder.DarkFuel
             if (_jumpStarted)
             {
                 _jumpStarted = false;
+                _playerComponents.Animator.SetBool("jumpStarted", false);
                 IsGrounded = false;
+                _playerComponents.Animator.SetBool("isGrounded", false);
                 _playerComponents.RigidBody.AddForce(Vector3.up * JumpForce);
             }
         }
@@ -49,10 +52,12 @@ namespace CaptainCoder.DarkFuel
             if (isHit)
             {
                 IsGrounded = true;
+                _playerComponents.Animator.SetBool("isGrounded", true);
             }
             else
             {
                 IsGrounded = false;
+                _playerComponents.Animator.SetBool("isGrounded", false);
             }
 
         }
