@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using CaptainCoder.UnityEngine;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace CaptainCoder.DarkFuel
@@ -10,18 +11,32 @@ namespace CaptainCoder.DarkFuel
 
         [field: SerializeField]
         public Transform Target { get; set; }
-        public RoomController Room;
-        void Awake()
+        public RoomController Room { get; private set; }
+        public RoomController QueuedRoom { get; private set; }
+
+        public void QueueRoom(RoomController newRoom)
         {
+            QueuedRoom = newRoom;
+            if (Room == null)
+            {
+                LeaveRoom(null);
+            }
         }
 
-        public void SetRoom(RoomController newRoom)
+        public void LeaveRoom(RoomController lastRoom)
         {
-            if (Room != null) 
+            if (Room != lastRoom) { return; }
+            if (Room != null)
             { 
                 Room.Hide(); 
             }
-            Room = newRoom;
+            Room = QueuedRoom;
+            CenterCamera();
+        }
+
+        [Button("Center Camera")]
+        public void CenterCamera()
+        {
             transform.position = Room.CameraFocus.transform.position;
             Room.Show();
         }

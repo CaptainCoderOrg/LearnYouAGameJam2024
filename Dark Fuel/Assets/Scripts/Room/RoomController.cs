@@ -52,11 +52,12 @@ public class RoomController : MonoBehaviour
     public void OnEnter()
     {
         Debug.Log($"Entered: {Name}");
-        CameraFocus.CameraFollower.SetRoom(this);
+        CameraFocus.CameraFollower.QueueRoom(this);
     }
 
     public void OnExit()
     {
         Debug.Log($"Exited: {Name}");
+        CameraFocus.CameraFollower.LeaveRoom(this);
     }
 }
