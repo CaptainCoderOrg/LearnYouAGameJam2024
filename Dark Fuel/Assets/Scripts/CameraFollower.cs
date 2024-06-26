@@ -7,18 +7,23 @@ namespace CaptainCoder.DarkFuel
 {
     public class CameraFollower : MonoBehaviour
     {
-        
+
         [field: SerializeField]
-        public float TargetY { get; private set; }
+        public Transform Target { get; set; }
+        public RoomController Room;
         void Awake()
         {
-            TargetY = transform.position.y;
         }
 
-        // Update is called once per frame
-        void Update()
+        public void SetRoom(RoomController newRoom)
         {
-            transform.position = transform.position.WithY(TargetY);
+            if (Room != null) 
+            { 
+                Room.Hide(); 
+            }
+            Room = newRoom;
+            transform.position = Room.CameraFocus.transform.position;
+            Room.Show();
         }
     }
 }
