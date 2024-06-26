@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,16 +16,19 @@ public class RoomController : MonoBehaviour
     {
         CameraFocus = GetComponentInChildren<CameraFocus>();
         Debug.Assert(CameraFocus != null);
-        RoomCollider = GetComponentInChildren<RoomColliderTrigger>();
-        Debug.Assert(RoomCollider != null);
-        RoomCollider.OnEnter.AddListener(OnEnter);
-        RoomCollider.OnExit.AddListener(OnExit);
+        
         Renderers = GetComponentsInChildren<MeshRenderer>();
         Debug.Assert(Renderers.Length > 0);
         foreach (var renderer in Renderers)
         {
             renderer.enabled = false;
         }
+
+        RoomCollider = GetComponentInChildren<RoomColliderTrigger>();
+        Debug.Assert(RoomCollider != null);
+
+        RoomCollider.OnEnter.AddListener(OnEnter);
+        RoomCollider.OnExit.AddListener(OnExit);        
     }
 
     // Update is called once per frame
