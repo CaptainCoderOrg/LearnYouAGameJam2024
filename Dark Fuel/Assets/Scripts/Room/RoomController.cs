@@ -8,6 +8,7 @@ public class RoomController : MonoBehaviour
 {
     public string Name = "Unnamed Room";
     public MeshRenderer[] Renderers;
+    public SkinnedMeshRenderer[] SkinnedRenderers;
     [field: SerializeField]
     public RoomColliderTrigger RoomCollider { get; private set;}
     [field: SerializeField]
@@ -19,10 +20,8 @@ public class RoomController : MonoBehaviour
         
         Renderers = GetComponentsInChildren<MeshRenderer>();
         Debug.Assert(Renderers.Length > 0);
-        foreach (var renderer in Renderers)
-        {
-            renderer.enabled = false;
-        }
+        SkinnedRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+        Hide();
 
         RoomCollider = GetComponentInChildren<RoomColliderTrigger>();
         Debug.Assert(RoomCollider != null);
@@ -43,11 +42,19 @@ public class RoomController : MonoBehaviour
         {
             renderer.enabled = true;
         }
+        foreach (var renderer in SkinnedRenderers)
+        {
+            renderer.enabled = true;
+        }
     }
 
     public void Hide()
     {
         foreach (var renderer in Renderers)
+        {
+            renderer.enabled = false;
+        }
+        foreach (var renderer in SkinnedRenderers)
         {
             renderer.enabled = false;
         }
