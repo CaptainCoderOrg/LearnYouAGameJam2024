@@ -10,12 +10,9 @@ public class ButtonCollisionController : MonoBehaviour
     public float NormalThreshold = 0.1f;
     void OnCollisionEnter(Collision collision)
     {
-        foreach (ContactPoint contact in collision.contacts)
+        if (collision.IsAbove())
         {
-            if (contact.normal.y <= (-1.0 + NormalThreshold))
-            {
-                OnPressed.Invoke();
-            }
+            OnPressed.Invoke();
         }
     }
 

@@ -36,6 +36,7 @@ public class RoomController : MonoBehaviour
         
     }
 
+    [Button("Show")]
     public void Show()
     {
         foreach (var renderer in Renderers)
@@ -48,6 +49,7 @@ public class RoomController : MonoBehaviour
         }
     }
 
+    [Button("Hide")]
     public void Hide()
     {
         foreach (var renderer in Renderers)
