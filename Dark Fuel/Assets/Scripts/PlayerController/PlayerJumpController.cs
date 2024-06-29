@@ -55,6 +55,7 @@ namespace CaptainCoder.DarkFuel
             WaitForFixedUpdate wait = new ();
             float duration = JumpDuration;
             float startY = transform.position.y;
+            _playerComponents.Attach.Detach?.Invoke();
             while (duration > 0)
             {
                 duration -= Time.fixedDeltaTime;
@@ -65,7 +66,6 @@ namespace CaptainCoder.DarkFuel
                 }
                 float archPosition = JumpArch.Evaluate(percent) * JumpForce;
                 Rigidbody.MovePosition(transform.position.WithY(startY + archPosition));
-                Debug.Log(archPosition);
                 yield return wait;
             }
             Rigidbody.MovePosition(transform.position.WithY(startY));

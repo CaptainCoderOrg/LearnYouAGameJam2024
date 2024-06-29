@@ -7,6 +7,7 @@ namespace CaptainCoder.DarkFuel
     {
         public Rigidbody RigidBody; 
         public Animator Animator;
+        public AttachToTileController Attach;
         public GameObject Model;
 
         public static bool ChakrasAligned { get; internal set; } = false;
@@ -15,6 +16,7 @@ namespace CaptainCoder.DarkFuel
         {
             RigidBody = GetComponent<Rigidbody>();
             Animator = GetComponentInChildren<Animator>();
+            Attach = GetComponent<AttachToTileController>();
         }
 
     }
