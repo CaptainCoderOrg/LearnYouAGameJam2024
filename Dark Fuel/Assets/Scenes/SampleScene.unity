@@ -14183,7 +14183,7 @@ PrefabInstance:
     - target: {fileID: 8107036285311727235, guid: 5b401ddd04aaaaf4c940da977a0884be, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 779044650}
+      objectReference: {fileID: 1831728581}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16554,6 +16554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RigidBody: {fileID: 0}
   Animator: {fileID: 0}
+  Attach: {fileID: 0}
   Model: {fileID: 1455753493}
 --- !u!54 &1504562966
 Rigidbody:
@@ -16591,7 +16592,7 @@ Transform:
   m_GameObject: {fileID: 1504562964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.8631, y: 2.495, z: 2.5715008}
+  m_LocalPosition: {x: 12.363098, y: 2.495, z: -19.9285}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

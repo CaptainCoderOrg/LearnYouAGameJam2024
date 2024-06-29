@@ -13,6 +13,8 @@ public class SinkingTileController : MonoBehaviour
     public Vector3 Size = new (5, 0, 5);
     public float CheckDistance = 0.05f;
     public Transform GroundCheckPosition;
+    public float FloatDelay = 0.25f;
+    private float _startFloatIn = 1;
 
     public void Awake()
     {
@@ -43,6 +45,10 @@ public class SinkingTileController : MonoBehaviour
         {
             controller.AttachedTo = null;
             controller.Detach = null;
+            if (OnTop.Count == 0)
+            {
+                _startFloatIn = FloatDelay;
+            }
         }        
     }
 
@@ -50,7 +56,7 @@ public class SinkingTileController : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<AttachToTileController>(out var controller))
         {
-            OnTop.Remove(controller);
+            Detach(controller);
         }
     }
 
@@ -62,6 +68,11 @@ public class SinkingTileController : MonoBehaviour
 
     public void Float()
     {
+        _startFloatIn -= Time.fixedDeltaTime;
+        if (_startFloatIn > 0)
+        {
+            return;
+        }
         Vector3 position = transform.position;
         position.y += SinkingSpeed * Time.fixedDeltaTime;
         position.y = Math.Min(OriginalHeight, position.y);
@@ -73,7 +84,6 @@ public class SinkingTileController : MonoBehaviour
         float maxDistance = SinkingSpeed * Time.fixedDeltaTime;
         if (Physics.BoxCast(GroundCheckPosition.position, Size / 2, Vector3.down, out RaycastHit hitInfo, Quaternion.identity, CheckDistance, Layers))
         {
-            Debug.Log(hitInfo.distance);
             maxDistance = Math.Min(hitInfo.distance, maxDistance);
         }
         if (maxDistance <= 0.0001) { return; }

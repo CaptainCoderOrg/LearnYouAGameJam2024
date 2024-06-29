@@ -404,5 +404,6 @@ MonoBehaviour:
   OriginalHeight: 0
   SinkingSpeed: 5
   Size: {x: 4.5, y: 0, z: 4.5}
-  CheckDistance: 0.05
+  CheckDistance: 0.5
   GroundCheckPosition: {fileID: 1826912609535730960}
+  FloatDelay: 1
