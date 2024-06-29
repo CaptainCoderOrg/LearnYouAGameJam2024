@@ -403,6 +403,6 @@ MonoBehaviour:
     m_Bits: 192
   OriginalHeight: 0
   SinkingSpeed: 5
-  Size: {x: 5, y: 0, z: 5}
+  Size: {x: 4.5, y: 0, z: 4.5}
   CheckDistance: 0.05
   GroundCheckPosition: {fileID: 1826912609535730960}
