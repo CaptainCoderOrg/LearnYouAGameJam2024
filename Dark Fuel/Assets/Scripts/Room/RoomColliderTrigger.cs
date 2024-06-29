@@ -10,12 +10,12 @@ public class RoomColliderTrigger : MonoBehaviour
     public UnityEvent OnExit;
     public void OnTriggerEnter()
     {
-        OnEnter.Invoke();
+        OnEnter?.Invoke();
     }
 
     public void OnTriggerExit()
     {
-        OnExit.Invoke();
+        OnExit?.Invoke();
     }
 
     [Button("Resize Collider")]
@@ -30,6 +30,7 @@ public class RoomColliderTrigger : MonoBehaviour
             max = Vector3.Max(max, renderer.bounds.max);
         }
         BoxCollider collider = GetComponent<BoxCollider>();
+        max.y += 5;
         collider.size = max - min;
         transform.position = max - (collider.size / 2);
     }

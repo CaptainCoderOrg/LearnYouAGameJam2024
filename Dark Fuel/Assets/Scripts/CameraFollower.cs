@@ -12,6 +12,7 @@ namespace CaptainCoder.DarkFuel
         [field: SerializeField]
         public Transform Target { get; set; }
         public RoomController Room { get; private set; }
+        [field: SerializeField]
         public RoomController QueuedRoom { get; private set; }
 
         public void QueueRoom(RoomController newRoom)
@@ -23,9 +24,11 @@ namespace CaptainCoder.DarkFuel
             }
         }
 
-        public void LeaveRoom(RoomController lastRoom)
+        public void LeaveRoom(RoomController roomToLeave)
         {
-            if (Room != lastRoom) { return; }
+            if (QueuedRoom == null) { return; }
+            if (roomToLeave == QueuedRoom) { QueuedRoom = null; }
+            if (Room != roomToLeave) { return; }
             if (Room != null)
             { 
                 Room.Hide(); 
@@ -37,6 +40,7 @@ namespace CaptainCoder.DarkFuel
         [Button("Center Camera")]
         public void CenterCamera()
         {
+            if (Room == null) { return; }
             transform.position = Room.CameraFocus.transform.position;
             Room.Show();
         }
