@@ -76,7 +76,7 @@ namespace CaptainCoder.DarkFuel
         
         private void CheckGround()
         {
-            if (GroundRaycast())
+            if (GroundRaycast(out var hitInfo))
             {
                 IsGrounded = true;
                 _playerComponents.Animator.SetBool("isGrounded", true);

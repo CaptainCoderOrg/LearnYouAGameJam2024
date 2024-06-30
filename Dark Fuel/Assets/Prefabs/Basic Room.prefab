@@ -799,6 +799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6523aa7e16f2e0438b9959b359b3bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WallLayer:
+    serializedVersion: 2
+    m_Bits: 128
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -1261,5 +1264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Unnamed Room
   Renderers: []
+  SkinnedRenderers: []
   <RoomCollider>k__BackingField: {fileID: 0}
   <CameraFocus>k__BackingField: {fileID: 0}

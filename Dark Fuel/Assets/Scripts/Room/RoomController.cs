@@ -13,6 +13,7 @@ public class RoomController : MonoBehaviour
     public RoomColliderTrigger RoomCollider { get; private set;}
     [field: SerializeField]
     public CameraFocus CameraFocus { get; private set; }
+    
     void Awake()
     {
         CameraFocus = GetComponentInChildren<CameraFocus>();
@@ -47,6 +48,7 @@ public class RoomController : MonoBehaviour
         {
             renderer.enabled = true;
         }
+        RoomCollider.AddInvisibleWalls();
     }
 
     [Button("Hide")]
