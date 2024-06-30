@@ -1,5 +1,6 @@
 using System.Collections;
 using CaptainCoder.DarkFuel;
+using CaptainCoder.UnityEngine;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +14,9 @@ public class CoasterController : MonoBehaviour
     public MeshRenderer CoasterRenderer;
     public Material ActiveMaterial;
     public Material OriginalMaterial;
+    public PlayerAbilityData Ability;
+    public float PositionDuration = 0.25f;
+
     public void Awake()
     {
         Player = FindFirstObjectByType<PlayerComponents>();
@@ -31,16 +35,27 @@ public class CoasterController : MonoBehaviour
 
     public void PausePlayerAndAnimate()
     {
+        
+        Player.Ability = Ability;
         OriginalMaterial = CoasterRenderer.material;
         CoasterRenderer.material = ActiveMaterial;
         Player.Lock();
         StopAllCoroutines();
         StartCoroutine(LockPosition());
         KettleAnimator.SetBool("isPouring", true);
+        KettlePourSMB.OnFrameUpdate.AddListener(UpdateLiquid);
+        
     }
-    public float PositionDuration = 1f;
+    
+    private void UpdateLiquid(float percent)
+    {
+        Player.LiquidTransform.localScale = Player.LiquidTransform.localScale.WithY(percent);
+        Player.LiquidRenderer.material = Ability.LiquidMaterial;
+    }
+    
     private IEnumerator LockPosition()
     {
+        KettlePourSMB.OnFrameUpdate.RemoveListener(UpdateLiquid);
         Vector3 startPosition = Player.transform.position;
         Quaternion startRotation = Player.Model.transform.rotation;
         float timeRemaining = PositionDuration;

@@ -14,10 +14,10 @@ namespace CaptainCoder.DarkFuel
         public LayerMask GroundLayers;
         [field: SerializeField]
         public bool IsGrounded { get; private set; } = true;
-        [field: SerializeField]
-        public float JumpForce { get; set; } = 500;
-
         private bool _jumpStarted = false;
+        public float JumpHeight => _playerComponents.Ability.JumpHeight;
+        public float JumpDuration => _playerComponents.Ability.JumpDuration;
+        public AnimationCurve JumpArch => _playerComponents.Ability.JumpArch;
 
         // Start is called before the first frame update
         void Awake()
@@ -47,9 +47,6 @@ namespace CaptainCoder.DarkFuel
                 StartCoroutine(Jump());
             }
         }
-        
-        public float JumpDuration = 0.75f;
-        public AnimationCurve JumpArch;
         public IEnumerator Jump()
         {
             WaitForFixedUpdate wait = new ();
@@ -64,7 +61,7 @@ namespace CaptainCoder.DarkFuel
                 {
                     yield break;
                 }
-                float archPosition = JumpArch.Evaluate(percent) * JumpForce;
+                float archPosition = JumpArch.Evaluate(percent) * JumpHeight;
                 Rigidbody.MovePosition(transform.position.WithY(startY + archPosition));
                 yield return wait;
             }

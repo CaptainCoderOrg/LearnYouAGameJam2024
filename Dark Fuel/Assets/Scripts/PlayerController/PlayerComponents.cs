@@ -13,6 +13,9 @@ namespace CaptainCoder.DarkFuel
         public GameObject Model;
         public PlayerMovementController PlayerMovementController;
         public PlayerJumpController PlayerJumpController;
+        public PlayerAbilityData Ability;
+        public Transform LiquidTransform;
+        public MeshRenderer LiquidRenderer;
 
         void Awake()
         {
