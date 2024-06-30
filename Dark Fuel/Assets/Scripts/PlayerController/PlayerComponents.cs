@@ -11,6 +11,8 @@ namespace CaptainCoder.DarkFuel
         public Animator Animator;
         public AttachToTileController Attach;
         public GameObject Model;
+        public PlayerMovementController PlayerMovementController;
+        public PlayerJumpController PlayerJumpController;
 
         void Awake()
         {
@@ -18,6 +20,23 @@ namespace CaptainCoder.DarkFuel
             Animator = GetComponentInChildren<Animator>();
             Attach = GetComponent<AttachToTileController>();
             CameraFollower = FindFirstObjectByType<CameraFollower>();
+            PlayerMovementController = GetComponent<PlayerMovementController>();
+            PlayerJumpController = GetComponent<PlayerJumpController>();
+        }
+
+        public void Lock()
+        {
+            RigidBody.velocity = Vector3.zero;
+            Animator.SetFloat("Velocity", 0);
+            Animator.SetBool("isGrounded", true);
+            PlayerMovementController.enabled = false;
+            PlayerJumpController.enabled = false;
+        }
+
+        public void Unlock()
+        {
+            PlayerMovementController.enabled = true;
+            PlayerJumpController.enabled = true;
         }
 
     }
