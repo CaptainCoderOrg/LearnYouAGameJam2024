@@ -1,6 +1,7 @@
 using UnityEngine;
 using CaptainCoder.UnityEngine;
 using System.Collections;
+using System;
 namespace CaptainCoder.DarkFuel
 {
     [RequireComponent(typeof(PlayerComponents))]
@@ -10,6 +11,7 @@ namespace CaptainCoder.DarkFuel
         private Rigidbody Rigidbody => _playerComponents.RigidBody;
         public Transform GroundCheck;
         public float CheckDistance = 1;
+        public float MaxFallSpeed = 32;
         public Vector3 BoxCheckSize = new (.25f, .1f, .25f);
         public LayerMask GroundLayers;
         [field: SerializeField]
@@ -46,6 +48,8 @@ namespace CaptainCoder.DarkFuel
                 _playerComponents.Animator.SetBool("isGrounded", false);
                 StartCoroutine(Jump());
             }
+            float yVelocity = Math.Max(-MaxFallSpeed, Rigidbody.velocity.y);
+            Rigidbody.velocity = Rigidbody.velocity.WithY(yVelocity);
         }
         public IEnumerator Jump()
         {

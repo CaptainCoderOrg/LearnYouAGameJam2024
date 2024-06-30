@@ -21,7 +21,7 @@ public class RoomColliderTrigger : MonoBehaviour
 
     private Vector3 _min = Vector3.zero;
     private Vector3 _max = Vector3.zero;
-    [Button("Resize Collider")]
+    [Button("Add Invisible Walls")]
     public void AddInvisibleWalls()
     {
         foreach (Transform child in transform)
@@ -30,7 +30,7 @@ public class RoomColliderTrigger : MonoBehaviour
         }
         CalculateMinMax();
         float bottomY = _max.y;
-        float height = 5;
+        float height = 10;
         GameObject west = new ("west");
         west.transform.parent = transform;
         west.transform.position = new Vector3(_max.x - (_max.x - _min.x) / 2, bottomY, _max.z);
@@ -81,7 +81,7 @@ public class RoomColliderTrigger : MonoBehaviour
     {
         CalculateMinMax();
         BoxCollider collider = GetComponent<BoxCollider>();
-        _max.y += 5;
+        _max.y += 10;
         collider.size = _max - _min;
         transform.position = _max - (collider.size / 2);
     }
