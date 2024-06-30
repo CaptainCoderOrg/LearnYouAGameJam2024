@@ -21053,7 +21053,7 @@ PrefabInstance:
     - target: {fileID: 4881379195962263325, guid: 3a66f7daff23954498b307b619fca08b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 832bd806bea3e534195128a135753582, type: 2}
+      objectReference: {fileID: 2100000, guid: 35a31655d32ea8e47b7d6ce823c14f13, type: 2}
     - target: {fileID: 5883854953889229398, guid: 3a66f7daff23954498b307b619fca08b, type: 3}
       propertyPath: m_Name
       value: Transparent Door (1)
