@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3034744451931329203}
   - component: {fileID: 7105398230313995005}
+  - component: {fileID: 2874854894769950029}
   m_Layer: 6
   m_Name: Bean
   m_TagString: Untagged
@@ -54,6 +55,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2874854894769950029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2337791743582936347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d9431315acc7449952bc62fd3ce75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6208304760359506081
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,11 +155,75 @@ PrefabInstance:
       propertyPath: m_Name
       value: bean
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c097a106e16d3d43a1c9c73924630fd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c097a106e16d3d43a1c9c73924630fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1632523018282275950}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c097a106e16d3d43a1c9c73924630fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 921672848867230996}
   m_SourcePrefab: {fileID: 100100000, guid: 6c097a106e16d3d43a1c9c73924630fd, type: 3}
+--- !u!1 &7298867024670004404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c097a106e16d3d43a1c9c73924630fd, type: 3}
+  m_PrefabInstance: {fileID: 7605349634689051109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1632523018282275950
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298867024670004404}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4711208715938537054, guid: 6c097a106e16d3d43a1c9c73924630fd, type: 3}
+--- !u!114 &921672848867230996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298867024670004404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b26e86d2835d8048b2d132ec1c37a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTriggerEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2874854894769950029}
+        m_TargetAssemblyTypeName: BeanController, Assembly-CSharp
+        m_MethodName: OnTriggerEntered
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &7926643550336634382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c097a106e16d3d43a1c9c73924630fd, type: 3}
