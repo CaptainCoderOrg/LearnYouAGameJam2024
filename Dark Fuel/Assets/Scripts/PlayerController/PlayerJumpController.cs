@@ -33,7 +33,7 @@ namespace CaptainCoder.DarkFuel
             if (Input.GetButtonDown("Jump") && IsGrounded)
             {
                 _jumpStarted = true;
-                _playerComponents.Animator.SetBool("jumpStarted", true);
+                _playerComponents.ModelAnimator.SetBool("jumpStarted", true);
             }
         }
 
@@ -43,9 +43,9 @@ namespace CaptainCoder.DarkFuel
             if (_jumpStarted)
             {
                 _jumpStarted = false;
-                _playerComponents.Animator.SetBool("jumpStarted", false);
+                _playerComponents.ModelAnimator.SetBool("jumpStarted", false);
                 IsGrounded = false;
-                _playerComponents.Animator.SetBool("isGrounded", false);
+                _playerComponents.ModelAnimator.SetBool("isGrounded", false);
                 StartCoroutine(Jump());
             }
             float yVelocity = Math.Max(-MaxFallSpeed, Rigidbody.velocity.y);
@@ -80,12 +80,12 @@ namespace CaptainCoder.DarkFuel
             if (GroundRaycast(out var hitInfo))
             {
                 IsGrounded = true;
-                _playerComponents.Animator.SetBool("isGrounded", true);
+                _playerComponents.ModelAnimator.SetBool("isGrounded", true);
             }
             else
             {
                 IsGrounded = false;
-                _playerComponents.Animator.SetBool("isGrounded", false);
+                _playerComponents.ModelAnimator.SetBool("isGrounded", false);
             }
 
         }

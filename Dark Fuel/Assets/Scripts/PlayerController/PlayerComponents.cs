@@ -8,7 +8,7 @@ namespace CaptainCoder.DarkFuel
         public CameraFollower CameraFollower;
         public GameObject LastSolidGround;
         public Rigidbody RigidBody; 
-        public Animator Animator;
+        public Animator ModelAnimator;
         public AttachToTileController Attach;
         public GameObject Model;
         public PlayerMovementController PlayerMovementController;
@@ -20,7 +20,7 @@ namespace CaptainCoder.DarkFuel
         void Awake()
         {
             RigidBody = GetComponent<Rigidbody>();
-            Animator = GetComponentInChildren<Animator>();
+            // ModelAnimator = GetComponentInChildren<Animator>();
             Attach = GetComponent<AttachToTileController>();
             CameraFollower = FindFirstObjectByType<CameraFollower>();
             PlayerMovementController = GetComponent<PlayerMovementController>();
@@ -30,8 +30,8 @@ namespace CaptainCoder.DarkFuel
         public void Lock()
         {
             RigidBody.velocity = Vector3.zero;
-            Animator.SetFloat("Velocity", 0);
-            Animator.SetBool("isGrounded", true);
+            ModelAnimator.SetFloat("Velocity", 0);
+            ModelAnimator.SetBool("isGrounded", true);
             PlayerMovementController.enabled = false;
             PlayerJumpController.enabled = false;
         }

@@ -49,7 +49,7 @@ namespace CaptainCoder.DarkFuel
         {
             _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.WithXZ(InputDirection * Speed);
             _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.ClampXZMagnitude(Speed);
-            _playerComponents.Animator.SetFloat("Velocity", _playerComponents.RigidBody.velocity.XZ().normalized.magnitude);
+            _playerComponents.ModelAnimator.SetFloat("Velocity", _playerComponents.RigidBody.velocity.XZ().normalized.magnitude);
         }
     }
 }

@@ -19678,7 +19678,7 @@ MonoBehaviour:
   CameraFollower: {fileID: 0}
   LastSolidGround: {fileID: 0}
   RigidBody: {fileID: 0}
-  Animator: {fileID: 0}
+  ModelAnimator: {fileID: 1455753495}
   Attach: {fileID: 0}
   Model: {fileID: 1455753493}
   PlayerMovementController: {fileID: 0}
