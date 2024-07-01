@@ -25,7 +25,6 @@ namespace CaptainCoder.DarkFuel
             CameraFollower = FindFirstObjectByType<CameraFollower>();
             PlayerMovementController = GetComponent<PlayerMovementController>();
             PlayerJumpController = GetComponent<PlayerJumpController>();
-            PlayerAnimator.SetTrigger("Spawn");
         }
 
         public void Win()

@@ -7,6 +7,8 @@ public class HUDController : MonoBehaviour
     public Animator ReadyAnimator;
     public bool isFadedOut = false;
     public GameObject Fade;
+    public LevelController LevelController;
+    public bool isReady = false;
 
     void Awake()
     {
@@ -28,13 +30,26 @@ public class HUDController : MonoBehaviour
 
     public void ShowReady()
     {
+        LevelController = null;
+        LevelController = FindFirstObjectByType<LevelController>();
+        Debug.Assert(LevelController != null);
         ReadyAnimator.SetTrigger("Show");
+        isReady = true;
     }
 
     public void DisableFade() => Fade.SetActive(false);
 
     public void EnableFade() => Fade.SetActive(true);
 
-
+    public void Update()
+    {
+        if (!isReady) { return; }
+        if(Input.anyKeyDown)
+        {
+            ReadyAnimator.SetTrigger("Spawn");
+            isReady = false;
+            LevelController.Spawn();
+        }
+    }
 
 }

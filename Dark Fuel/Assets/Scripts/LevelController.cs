@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using CaptainCoder.DarkFuel;
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -26,5 +28,36 @@ public class LevelController : MonoBehaviour
     public void Awake()
     {
         Player = FindFirstObjectByType<PlayerComponents>();
+        FindHUD();
+    }
+
+    [Button("Spawn")]
+    public void Spawn()
+    {
+        Player.PlayerAnimator.SetTrigger("Spawn");
+    }
+
+    public void FindHUD()
+    {
+        if (FindFirstObjectByType<HUDController>() is HUDController hud)
+        {
+
+        }
+        else
+        {
+            StartCoroutine(LoadHUD());
+        }
+    }
+
+    private IEnumerator LoadHUD()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Main", LoadSceneMode.Additive);
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+        TitleScreenController titleScreen = FindFirstObjectByType<TitleScreenController>();
+        titleScreen.Hide();
+        Player.PlayerAnimator.SetTrigger("Spawn");
     }
 }

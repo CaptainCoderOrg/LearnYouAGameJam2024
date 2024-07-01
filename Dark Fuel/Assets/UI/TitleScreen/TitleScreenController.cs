@@ -23,14 +23,27 @@ public class TitleScreenController : MonoBehaviour
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         while (!asyncLoad.isDone) { yield return null; }
         LevelController levelController = FindFirstObjectByType<LevelController>();
-        Debug.Log(levelController);
+        Hide();
+        HUDController.FadeIn();
+        HUDController.ShowReady();
+    }
+
+    public void Hide()
+    {
         foreach (GameObject obj in TitleScreenObjects)
         {
             obj.SetActive(false);
         }
         TitleSceneCamera.gameObject.SetActive(false);
-        HUDController.FadeIn();
-        HUDController.ShowReady();
+    }
+
+    public void Show()
+    {
+        foreach (GameObject obj in TitleScreenObjects)
+        {
+            obj.SetActive(true);
+        }
+        TitleSceneCamera.gameObject.SetActive(true);
     }
 
 }
