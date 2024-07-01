@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using CaptainCoder.DarkFuel;
+using NaughtyAttributes;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class TitleScreenController : MonoBehaviour
+{
+    public HUDController HUDController;   
+    public Camera TitleSceneCamera;
+    public GameObject[] TitleScreenObjects;
+    
+    public void Play()
+    {
+        StartCoroutine(LoadLevel("Level1"));
+    }
+
+    private IEnumerator LoadLevel(string scene)
+    {   
+        HUDController.FadeOut();
+        while (!HUDController.isFadedOut) { yield return null; }
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
+        while (!asyncLoad.isDone) { yield return null; }
+        LevelController levelController = FindFirstObjectByType<LevelController>();
+        Debug.Log(levelController);
+        foreach (GameObject obj in TitleScreenObjects)
+        {
+            obj.SetActive(false);
+        }
+        TitleSceneCamera.gameObject.SetActive(false);
+        HUDController.FadeIn();
+        HUDController.ShowReady();
+    }
+
+}

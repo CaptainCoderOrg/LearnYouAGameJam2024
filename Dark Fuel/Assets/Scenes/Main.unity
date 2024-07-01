@@ -240,13 +240,14 @@ GameObject:
   - component: {fileID: 91872852}
   - component: {fileID: 91872851}
   - component: {fileID: 91872855}
+  - component: {fileID: 91872856}
   m_Layer: 5
   m_Name: HUD (Canvas)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &91872851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +309,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &91872854
 RectTransform:
@@ -352,6 +353,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &91872856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91872850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047c7a8d0e4711044829de713bbd8de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasAnimator: {fileID: 91872855}
+  ReadyAnimator: {fileID: 1594765730}
+  isFadedOut: 0
+  Fade: {fileID: 1457953437}
 --- !u!224 &304738928 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7620867969451143402, guid: 4dcb7f751e3cfc14096ceb308ec72d65, type: 3}
@@ -619,6 +636,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 874023175}
+  - component: {fileID: 874023176}
   m_Layer: 0
   m_Name: Title Screen
   m_TagString: Untagged
@@ -644,6 +662,23 @@ Transform:
   - {fileID: 37127480}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &874023176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874023174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f3ff40fc7259946b0dd679649f5675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HUDController: {fileID: 91872856}
+  TitleSceneCamera: {fileID: 2017593261}
+  TitleScreenObjects:
+  - {fileID: 874023174}
+  - {fileID: 1272231505}
 --- !u!1 &888937804
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +958,7 @@ GameObject:
   - component: {fileID: 1272231507}
   - component: {fileID: 1272231506}
   m_Layer: 5
-  m_Name: Menu Canvas
+  m_Name: Title Screen (Canvas)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1050,7 +1085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1457953438
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1084,7 +1119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1674,6 +1709,46 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!1 &1798213332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798213334}
+  - component: {fileID: 1798213333}
+  m_Layer: 0
+  m_Name: AudioListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1798213333
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798213332}
+  m_Enabled: 1
+--- !u!4 &1798213334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798213332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.42652988, y: 9.115585, z: -12.59305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1831205356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,7 +1887,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2017593262}
   - component: {fileID: 2017593261}
-  - component: {fileID: 2017593260}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1820,14 +1894,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &2017593260
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017593259}
-  m_Enabled: 1
 --- !u!20 &2017593261
 Camera:
   m_ObjectHideFlags: 0
@@ -2016,7 +2082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3755587195476011155, guid: 9f3452aaa510b9744970100a32c2ff2f, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 52735
+      value: 47103
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2031,6 +2097,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 973134691}
     m_Modifications:
+    - target: {fileID: 949560078298441949, guid: 4dcb7f751e3cfc14096ceb308ec72d65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 949560078298441949, guid: 4dcb7f751e3cfc14096ceb308ec72d65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 949560078298441949, guid: 4dcb7f751e3cfc14096ceb308ec72d65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 874023176}
+    - target: {fileID: 949560078298441949, guid: 4dcb7f751e3cfc14096ceb308ec72d65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 949560078298441949, guid: 4dcb7f751e3cfc14096ceb308ec72d65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 949560078298441949, guid: 4dcb7f751e3cfc14096ceb308ec72d65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TitleScreenController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 949560078298441949, guid: 4dcb7f751e3cfc14096ceb308ec72d65, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1817309760590263264, guid: 4dcb7f751e3cfc14096ceb308ec72d65, type: 3}
       propertyPath: m_fontSizeBase
       value: 48
@@ -2157,3 +2251,4 @@ SceneRoots:
   - {fileID: 888937807}
   - {fileID: 874023175}
   - {fileID: 1272231510}
+  - {fileID: 1798213334}
