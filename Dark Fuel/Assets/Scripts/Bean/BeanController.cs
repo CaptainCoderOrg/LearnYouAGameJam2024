@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class BeanController : MonoBehaviour
 {
+    public LevelController LevelController;
+    public void Awake()
+    {
+        LevelController = FindFirstObjectByType<LevelController>();
+        LevelController.TotalBeans++;
+    }
     
     public void OnTriggerEntered(Collider other)
     {
@@ -15,6 +21,7 @@ public class BeanController : MonoBehaviour
 
     public void Collect()
     {
+        LevelController.BeansCollected++;
         Destroy(gameObject);
     }
 }
