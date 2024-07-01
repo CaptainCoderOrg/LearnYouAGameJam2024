@@ -9,6 +9,7 @@ namespace CaptainCoder.DarkFuel
         public GameObject LastSolidGround;
         public Rigidbody RigidBody; 
         public Animator ModelAnimator;
+        public Animator PlayerAnimator;
         public AttachToTileController Attach;
         public GameObject Model;
         public PlayerMovementController PlayerMovementController;
@@ -20,11 +21,16 @@ namespace CaptainCoder.DarkFuel
         void Awake()
         {
             RigidBody = GetComponent<Rigidbody>();
-            // ModelAnimator = GetComponentInChildren<Animator>();
             Attach = GetComponent<AttachToTileController>();
             CameraFollower = FindFirstObjectByType<CameraFollower>();
             PlayerMovementController = GetComponent<PlayerMovementController>();
             PlayerJumpController = GetComponent<PlayerJumpController>();
+            PlayerAnimator.SetTrigger("Spawn");
+        }
+
+        public void Win()
+        {
+            PlayerAnimator.SetTrigger("Won");
         }
 
         public void Lock()

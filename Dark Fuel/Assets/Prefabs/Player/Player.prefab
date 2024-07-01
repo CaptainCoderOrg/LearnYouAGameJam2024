@@ -279,6 +279,7 @@ MonoBehaviour:
   LastSolidGround: {fileID: 0}
   RigidBody: {fileID: 0}
   ModelAnimator: {fileID: 4481860758500273307}
+  PlayerAnimator: {fileID: 9111160871793974968}
   Attach: {fileID: 0}
   Model: {fileID: 8726639967520153288}
   PlayerMovementController: {fileID: 0}
