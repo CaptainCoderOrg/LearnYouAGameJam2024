@@ -1,20 +1,26 @@
+using System.Collections;
+using CaptainCoder.DarkFuel;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HUDController : MonoBehaviour
 {
        
     public Animator CanvasAnimator;
     public Animator ReadyAnimator;
+    public Animator CompleteAnimator;
     public bool isFadedOut = false;
     public GameObject Fade;
     public LevelController LevelController;
     public bool isReady = false;
+    public TitleScreenController TitleScreen;
 
     void Awake()
     {
-        FadeOutBehaviour fadeOutBehaviour = CanvasAnimator.GetBehaviour<FadeOutBehaviour>();
-        fadeOutBehaviour.OnFadeStarted.AddListener(() => isFadedOut = false);
-        fadeOutBehaviour.OnFadeFinished.AddListener(() => isFadedOut = true);
+        TitleScreen = FindFirstObjectByType<TitleScreenController>();
+        StateListener fadeOutBehaviour = CanvasAnimator.GetBehaviour<StateListener>();
+        fadeOutBehaviour.OnStateStarted.AddListener(() => isFadedOut = false);
+        fadeOutBehaviour.OnStateFinished.AddListener(() => isFadedOut = true);
     }
 
     public void FadeIn()
@@ -52,4 +58,25 @@ public class HUDController : MonoBehaviour
         }
     }
 
+    public void Win(PlayerComponents player, string nextScene) => StartCoroutine(WinAnimation(player, nextScene));
+
+    private IEnumerator WinAnimation(PlayerComponents player, string nextScene)
+    {
+        player.PlayerAnimator.SetTrigger("Won");
+        CompleteAnimator.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3);
+        FadeOut();
+        while (!isFadedOut)
+        {
+            yield return null;
+        }
+        CompleteAnimator.gameObject.SetActive(false);
+        Scene toUnload = player.gameObject.scene;
+        SceneManager.UnloadSceneAsync(toUnload);
+        if (nextScene == "Main")
+        {
+            TitleScreen.Show();
+            FadeIn();
+        }
+    }
 }

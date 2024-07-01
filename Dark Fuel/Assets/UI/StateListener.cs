@@ -1,19 +1,19 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class FadeOutBehaviour : StateMachineBehaviour
+public class StateListener : StateMachineBehaviour
 {
-    public UnityEvent OnFadeFinished;
-    public UnityEvent OnFadeStarted;
+    public UnityEvent OnStateFinished;
+    public UnityEvent OnStateStarted;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
-        OnFadeStarted.Invoke();
+        OnStateStarted.Invoke();
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
-        OnFadeFinished.Invoke();
+        OnStateFinished.Invoke();
     }
 
 }

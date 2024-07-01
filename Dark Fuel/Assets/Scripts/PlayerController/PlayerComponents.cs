@@ -27,11 +27,6 @@ namespace CaptainCoder.DarkFuel
             PlayerJumpController = GetComponent<PlayerJumpController>();
         }
 
-        public void Win()
-        {
-            PlayerAnimator.SetTrigger("Won");
-        }
-
         public void Lock()
         {
             RigidBody.velocity = Vector3.zero;

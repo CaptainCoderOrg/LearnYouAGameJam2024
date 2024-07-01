@@ -18362,9 +18362,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206c44a1ca654fe48a8ff749f16a2c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextScene: Main
   _beansCollected: 0
   TotalBeans: 0
   Player: {fileID: 0}
+  HUD: {fileID: 0}
 --- !u!4 &1400074815
 Transform:
   m_ObjectHideFlags: 0
