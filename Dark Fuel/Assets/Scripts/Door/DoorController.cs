@@ -8,6 +8,7 @@ public class DoorController : MonoBehaviour
     public DoorController Other;
     public Animator Animator;
     public bool StartOpen = false;
+    public AudioSource SFX;
     public bool IsOpen
     {
         get => Animator.GetBool("isOpen");
@@ -18,6 +19,7 @@ public class DoorController : MonoBehaviour
     }
     void Awake()
     {
+        SFX = GetComponentInChildren<AudioSource>();
         Animator = GetComponentInChildren<Animator>();
     }
     void Start()
@@ -31,6 +33,10 @@ public class DoorController : MonoBehaviour
     [Button("Open")]
     public void Open()
     {
+        if (!IsOpen)
+        {
+            SFX?.Play();
+        }
         IsOpen = true;
         Other.IsOpen = true;
     }
