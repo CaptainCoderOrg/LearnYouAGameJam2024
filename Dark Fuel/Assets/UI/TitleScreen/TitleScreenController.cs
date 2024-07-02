@@ -11,9 +11,9 @@ public class TitleScreenController : MonoBehaviour
     public Camera TitleSceneCamera;
     public GameObject[] TitleScreenObjects;
     
-    public void Play()
+    public void Play(string sceneName)
     {
-        StartCoroutine(LoadLevel("Level1"));
+        StartCoroutine(LoadLevel(sceneName));
     }
 
     private IEnumerator LoadLevel(string scene)

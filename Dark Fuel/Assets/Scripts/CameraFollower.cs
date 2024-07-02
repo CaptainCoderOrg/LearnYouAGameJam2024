@@ -40,7 +40,7 @@ namespace CaptainCoder.DarkFuel
         [Button("Center Camera")]
         public void CenterCamera()
         {
-            if (Room == null) { return; }
+            if (Room == null || Room.CameraFocus == null) { return; }
             transform.position = Room.CameraFocus.transform.position;
             Room.Show();
         }

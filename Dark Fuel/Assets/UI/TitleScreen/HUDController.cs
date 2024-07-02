@@ -70,13 +70,23 @@ public class HUDController : MonoBehaviour
         {
             yield return null;
         }
+
         CompleteAnimator.gameObject.SetActive(false);
         Scene toUnload = player.gameObject.scene;
-        SceneManager.UnloadSceneAsync(toUnload);
+        AsyncOperation unloading = SceneManager.UnloadSceneAsync(toUnload);
+        while (!unloading.isDone) { yield return null; }
         if (nextScene == "Main")
         {
             TitleScreen.Show();
             FadeIn();
         }
+        else
+        {
+            AsyncOperation loading = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
+            while (!loading.isDone) { yield return null; }
+            FadeIn();
+            ShowReady();
+        }
+        
     }
 }
