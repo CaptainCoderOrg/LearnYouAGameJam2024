@@ -14,9 +14,12 @@ public class HUDController : MonoBehaviour
     public LevelController LevelController;
     public bool isReady = false;
     public TitleScreenController TitleScreen;
+    public DialogueController Dialogue;
 
     void Awake()
     {
+        Dialogue = FindFirstObjectByType<DialogueController>();
+        Debug.Assert(Dialogue != null);
         TitleScreen = FindFirstObjectByType<TitleScreenController>();
         StateListener fadeOutBehaviour = CanvasAnimator.GetBehaviour<StateListener>();
         fadeOutBehaviour.OnStateStarted.AddListener(() => isFadedOut = false);

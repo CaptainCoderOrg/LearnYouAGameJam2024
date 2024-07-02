@@ -66,7 +66,7 @@ public class LevelController : MonoBehaviour
             yield return null;
         }
         TitleScreenController titleScreen = FindFirstObjectByType<TitleScreenController>();
-        titleScreen.Hide();    
+        titleScreen.Hide();
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
         Player.PlayerAnimator.SetTrigger("Spawn");
         HUD = FindFirstObjectByType<HUDController>();
