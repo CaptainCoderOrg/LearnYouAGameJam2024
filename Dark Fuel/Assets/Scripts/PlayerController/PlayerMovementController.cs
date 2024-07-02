@@ -7,6 +7,7 @@ namespace CaptainCoder.DarkFuel
     [RequireComponent(typeof(PlayerComponents))]
     public class PlayerMovementController : MonoBehaviour
     {
+        public ControlSettingsData Controls;
         public Vector3 InputDirection { get; private set; }
         private PlayerComponents _playerComponents;
         private float ForwardAxis => Input.GetAxis("Vertical");
@@ -21,6 +22,10 @@ namespace CaptainCoder.DarkFuel
         void Update()
         {
             InputDirection = new (ForwardAxis, 0, RightAxis);
+            if (!Controls.UseIsoMovement())
+            {
+                InputDirection = Quaternion.AngleAxis(-45, Vector3.up) * InputDirection;
+            }
             if (InputDirection.magnitude > 0.1)
             {
                 StopAllCoroutines();
