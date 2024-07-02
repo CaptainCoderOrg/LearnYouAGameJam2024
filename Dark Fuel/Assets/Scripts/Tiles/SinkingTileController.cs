@@ -25,8 +25,7 @@ public class SinkingTileController : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<AttachToTileController>(out var controller) && collision.IsAbove())
         {
-            controller.Detach = () => Detach(controller);
-            OnTop.Add(controller);
+            Attach(controller);
         }
     }
 
@@ -62,13 +61,13 @@ public class SinkingTileController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (IsSinking) { Sink(); }
+        _startFloatIn -= Time.fixedDeltaTime;
+        if (IsSinking || _startFloatIn > 0) { Sink(); }
         else { Float(); }
     }
 
     public void Float()
     {
-        _startFloatIn -= Time.fixedDeltaTime;
         if (_startFloatIn > 0)
         {
             return;
