@@ -8,7 +8,9 @@ public class TriggerCollider : MonoBehaviour
     public UnityEvent<Collider> OnTriggerEntered;
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
-        OnTriggerEntered.Invoke(other);
+        if (other.attachedRigidbody.tag == "Player")
+        {
+            OnTriggerEntered.Invoke(other);
+        }
     }
 }

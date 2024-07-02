@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using CaptainCoder.DarkFuel;
 using NaughtyAttributes;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,12 +9,14 @@ public class LevelController : MonoBehaviour
     public string NextScene;
     [SerializeField]
     private int _beansCollected = 0;
+    public event System.Action<int, int> OnBeansUpdated;
     public int BeansCollected
     {
         get => _beansCollected;
         set
         {
             _beansCollected = value;
+            OnBeansUpdated(_beansCollected, TotalBeans);
             if (BeansRemaining == 0)
             {
                 Win();

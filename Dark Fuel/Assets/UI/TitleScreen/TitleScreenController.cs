@@ -24,8 +24,10 @@ public class TitleScreenController : MonoBehaviour
         while (!asyncLoad.isDone) { yield return null; }
         LevelController levelController = FindFirstObjectByType<LevelController>();
         Hide();
+        HUDController.BeansRemaining.gameObject.SetActive(true);
         HUDController.FadeIn();
         HUDController.ShowReady();
+        
     }
 
     public void Hide()

@@ -1,5 +1,6 @@
 using System.Collections;
 using CaptainCoder.DarkFuel;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,8 @@ public class HUDController : MonoBehaviour
     public bool isReady = false;
     public TitleScreenController TitleScreen;
     public DialogueController Dialogue;
+    public BeansRemainingController BeansRemaining;
+    
 
     void Awake()
     {
@@ -24,6 +27,9 @@ public class HUDController : MonoBehaviour
         StateListener fadeOutBehaviour = CanvasAnimator.GetBehaviour<StateListener>();
         fadeOutBehaviour.OnStateStarted.AddListener(() => isFadedOut = false);
         fadeOutBehaviour.OnStateFinished.AddListener(() => isFadedOut = true);
+        BeansRemaining = GetComponentInChildren<BeansRemainingController>();
+        Debug.Assert(BeansRemaining != null);
+        BeansRemaining.gameObject.SetActive(false);
     }
 
     public void FadeIn()
@@ -35,6 +41,7 @@ public class HUDController : MonoBehaviour
     {
         isFadedOut = false;
         CanvasAnimator.SetTrigger("FadeOut");
+        BeansRemaining.gameObject.SetActive(false);
     }
 
     public void ShowReady()
@@ -43,6 +50,7 @@ public class HUDController : MonoBehaviour
         LevelController = FindFirstObjectByType<LevelController>();
         Debug.Assert(LevelController != null);
         ReadyAnimator.SetTrigger("Show");
+        BeansRemaining.RegisterLevelController(LevelController);
         isReady = true;
     }
 
@@ -87,6 +95,7 @@ public class HUDController : MonoBehaviour
         {
             AsyncOperation loading = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
             while (!loading.isDone) { yield return null; }
+            BeansRemaining.gameObject.SetActive(false);
             FadeIn();
             ShowReady();
         }
