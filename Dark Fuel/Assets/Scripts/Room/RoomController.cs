@@ -42,10 +42,12 @@ public class RoomController : MonoBehaviour
     {
         foreach (var renderer in Renderers)
         {
+            if (renderer == null) { continue; }
             renderer.enabled = true;
         }
         foreach (var renderer in SkinnedRenderers)
         {
+            if (renderer == null) { continue; }
             renderer.enabled = true;
         }
         RoomCollider.AddInvisibleWalls();
@@ -56,10 +58,12 @@ public class RoomController : MonoBehaviour
     {
         foreach (var renderer in Renderers)
         {
+            if (renderer == null) { continue; }
             renderer.enabled = false;
         }
         foreach (var renderer in SkinnedRenderers)
         {
+            if (renderer == null) { continue; }
             renderer.enabled = false;
         }
     }
