@@ -16,7 +16,7 @@ public class LevelController : MonoBehaviour
         set
         {
             _beansCollected = value;
-            OnBeansUpdated(_beansCollected, TotalBeans);
+            OnBeansUpdated?.Invoke(_beansCollected, TotalBeans);
             if (BeansRemaining == 0)
             {
                 Win();
@@ -71,5 +71,6 @@ public class LevelController : MonoBehaviour
         Player.PlayerAnimator.SetTrigger("Spawn");
         HUD = FindFirstObjectByType<HUDController>();
         Debug.Assert(HUD != null);
+        HUD.ShowReady();
     }
 }

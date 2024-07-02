@@ -50,6 +50,7 @@ public class HUDController : MonoBehaviour
         LevelController = FindFirstObjectByType<LevelController>();
         Debug.Assert(LevelController != null);
         ReadyAnimator.SetTrigger("Show");
+        BeansRemaining.gameObject.SetActive(true);
         BeansRemaining.RegisterLevelController(LevelController);
         isReady = true;
     }
@@ -95,7 +96,7 @@ public class HUDController : MonoBehaviour
         {
             AsyncOperation loading = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
             while (!loading.isDone) { yield return null; }
-            BeansRemaining.gameObject.SetActive(false);
+            BeansRemaining.gameObject.SetActive(true);
             FadeIn();
             ShowReady();
         }
