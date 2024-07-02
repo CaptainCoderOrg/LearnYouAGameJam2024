@@ -1048,6 +1048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361254842}
   - component: {fileID: 361254843}
+  - component: {fileID: 361254844}
   m_Layer: 5
   m_Name: Complete
   m_TagString: Untagged
@@ -1068,6 +1069,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 334959823}
+  - {fileID: 1663447309}
   m_Father: {fileID: 91872854}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -1096,6 +1098,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &361254844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361254841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b067f0f173a85414d91b372144d6ede5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSource: {fileID: 1663447310}
+  Clips:
+  - {fileID: 8300000, guid: 6f0705a5a521abb4f907e0af34f08500, type: 3}
 --- !u!1001 &386463377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1862,6 +1879,7 @@ RectTransform:
   m_Children:
   - {fileID: 2096729548}
   - {fileID: 1021010025}
+  - {fileID: 1292623970}
   m_Father: {fileID: 91872854}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -2107,6 +2125,134 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &944852894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944852895}
+  - component: {fileID: 944852896}
+  m_Layer: 0
+  m_Name: ReadySound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &944852895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944852894}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -480, y: -229.06691, z: 0}
+  m_LocalScale: {x: 0.6032045, y: 0.6032045, z: 0.6032045}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1594765729}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &944852896
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944852894}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6849276846965121036, guid: adb45b35adf7dd643b335fd4fa82c8d3, type: 2}
+  m_audioClip: {fileID: 8300000, guid: aca065582c628af40b6f3308af2db1cd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 2.04
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &951095077
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,6 +3266,138 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1292623969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1292623970}
+  - component: {fileID: 1292623971}
+  m_Layer: 5
+  m_Name: SlideSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1292623970
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292623969}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 770201470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &1292623971
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292623969}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6849276846965121036, guid: adb45b35adf7dd643b335fd4fa82c8d3, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1362449511
 GameObject:
   m_ObjectHideFlags: 0
@@ -3421,7 +3699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"SFX
-      Volume Test","summary":null,"pan":{"x":158.5973,"y":141.5001},"zoom":0.8,"elements":[{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Slider","$type":"System.String"},"object":null},"position":{"x":-512.0,"y":-207.0},"guid":"dfabb134-090d-47fb-94ef-e4a55a6bb2ad","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"10"},{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-283.0,"y":-208.0},"guid":"b1fdb97f-0002-412c-b5ec-a75e8d309af8","$version":"A","$type":"Unity.VisualScripting.OnSliderValueChanged","$id":"12"},{"chainable":false,"parameterNames":[],"member":{"name":"Play","parameterTypes":[],"targetType":"UnityEngine.AudioSource","targetTypeName":"UnityEngine.AudioSource","$version":"A"},"defaultValues":{"target":{"$content":0,"$type":"UnityEngine.Object"}},"position":{"x":514.0,"y":-223.0},"guid":"3b9dcc42-a19c-4554-ba22-6a41a78ce310","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"defaultValues":{},"position":{"x":225.0,"y":-271.0},"guid":"0cc9a8ae-8643-4951-ba11-5f733df88db7","$version":"A","$type":"Unity.VisualScripting.If","$id":"18"},{"member":{"name":"isPlaying","parameterTypes":null,"targetType":"UnityEngine.AudioSource","targetTypeName":"UnityEngine.AudioSource","$version":"A"},"defaultValues":{"target":{"$content":1,"$type":"UnityEngine.Object"}},"position":{"x":-161.0,"y":253.0},"guid":"d03a7f35-eda8-4c74-82e6-e3c9ec6ff6b0","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"20"},{"defaultValues":{},"position":{"x":57.0,"y":156.0},"guid":"d5e9fa0e-c2a8-4799-b3e2-1476c2c6a05a","$version":"A","$type":"Unity.VisualScripting.Negate","$id":"23"},{"member":{"name":"time","parameterTypes":null,"targetType":"UnityEngine.Time","targetTypeName":"UnityEngine.Time","$version":"A"},"defaultValues":{},"position":{"x":-378.0,"y":46.0},"guid":"436b854b-c9ce-4d5e-80b3-be3ba7a3f991","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"25"},{"numeric":true,"defaultValues":{"b":{"$content":0.0,"$type":"System.Single"}},"position":{"x":-215.0,"y":41.0},"guid":"4d7055b1-cc9b-41f6-bb5d-63a29777ba7b","$version":"A","$type":"Unity.VisualScripting.Greater","$id":"28"},{"defaultValues":{},"position":{"x":119.0,"y":-114.0},"guid":"f1927077-b543-4728-a0e7-7671be4b50fa","$version":"A","$type":"Unity.VisualScripting.And","$id":"30"},{"sourceUnit":{"$ref":"12"},"sourceKey":"trigger","destinationUnit":{"$ref":"18"},"destinationKey":"enter","guid":"02bad109-689b-48ee-9bc0-cc00449fcc95","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"ifTrue","destinationUnit":{"$ref":"14"},"destinationKey":"enter","guid":"a4588bbf-c4ca-4eaa-b788-92fec0fe4dc4","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"25"},"sourceKey":"value","destinationUnit":{"$ref":"28"},"destinationKey":"a","guid":"f588e72b-b03a-4042-9148-6b80aa403733","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"28"},"sourceKey":"comparison","destinationUnit":{"$ref":"30"},"destinationKey":"a","guid":"373b1bb1-4091-43e1-9c1b-adf8ad98277f","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"23"},"sourceKey":"output","destinationUnit":{"$ref":"30"},"destinationKey":"b","guid":"0bd319e4-1207-4620-8039-f9907ea618a8","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"value","destinationUnit":{"$ref":"12"},"destinationKey":"target","guid":"bf29c6cf-6858-4477-869b-5355bb5a6e01","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"20"},"sourceKey":"value","destinationUnit":{"$ref":"23"},"destinationKey":"input","guid":"3e886a20-0eac-4b35-96ad-5f0a0b30c54b","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"30"},"sourceKey":"result","destinationUnit":{"$ref":"18"},"destinationKey":"condition","guid":"152b2039-d2bc-4527-be2e-af7423607dbe","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
+      Volume Test","summary":null,"pan":{"x":158.5973,"y":141.5001},"zoom":0.8,"elements":[{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Slider","$type":"System.String"},"object":null},"position":{"x":-512.0,"y":-207.0},"guid":"dfabb134-090d-47fb-94ef-e4a55a6bb2ad","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"10"},{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-283.0,"y":-208.0},"guid":"b1fdb97f-0002-412c-b5ec-a75e8d309af8","$version":"A","$type":"Unity.VisualScripting.OnSliderValueChanged","$id":"12"},{"chainable":false,"parameterNames":[],"member":{"name":"Play","parameterTypes":[],"targetType":"UnityEngine.AudioSource","targetTypeName":"UnityEngine.AudioSource","$version":"A"},"defaultValues":{"target":{"$content":0,"$type":"UnityEngine.Object"}},"position":{"x":514.0,"y":-223.0},"guid":"3b9dcc42-a19c-4554-ba22-6a41a78ce310","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"defaultValues":{},"position":{"x":225.0,"y":-271.0},"guid":"0cc9a8ae-8643-4951-ba11-5f733df88db7","$version":"A","$type":"Unity.VisualScripting.If","$id":"18"},{"member":{"name":"isPlaying","parameterTypes":null,"targetType":"UnityEngine.AudioSource","targetTypeName":"UnityEngine.AudioSource","$version":"A"},"defaultValues":{"target":{"$content":1,"$type":"UnityEngine.Object"}},"position":{"x":-161.0,"y":253.0},"guid":"d03a7f35-eda8-4c74-82e6-e3c9ec6ff6b0","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"20"},{"defaultValues":{},"position":{"x":57.0,"y":156.0},"guid":"d5e9fa0e-c2a8-4799-b3e2-1476c2c6a05a","$version":"A","$type":"Unity.VisualScripting.Negate","$id":"23"},{"member":{"name":"time","parameterTypes":null,"targetType":"UnityEngine.Time","targetTypeName":"UnityEngine.Time","$version":"A"},"defaultValues":{},"position":{"x":-378.0,"y":46.0},"guid":"436b854b-c9ce-4d5e-80b3-be3ba7a3f991","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"25"},{"numeric":true,"defaultValues":{"b":{"$content":0.0,"$type":"System.Single"}},"position":{"x":-215.0,"y":41.0},"guid":"4d7055b1-cc9b-41f6-bb5d-63a29777ba7b","$version":"A","$type":"Unity.VisualScripting.Greater","$id":"28"},{"defaultValues":{},"position":{"x":119.0,"y":-114.0},"guid":"f1927077-b543-4728-a0e7-7671be4b50fa","$version":"A","$type":"Unity.VisualScripting.And","$id":"30"},{"sourceUnit":{"$ref":"12"},"sourceKey":"trigger","destinationUnit":{"$ref":"18"},"destinationKey":"enter","guid":"02bad109-689b-48ee-9bc0-cc00449fcc95","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"ifTrue","destinationUnit":{"$ref":"14"},"destinationKey":"enter","guid":"a4588bbf-c4ca-4eaa-b788-92fec0fe4dc4","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"20"},"sourceKey":"value","destinationUnit":{"$ref":"23"},"destinationKey":"input","guid":"3e886a20-0eac-4b35-96ad-5f0a0b30c54b","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"25"},"sourceKey":"value","destinationUnit":{"$ref":"28"},"destinationKey":"a","guid":"f588e72b-b03a-4042-9148-6b80aa403733","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"28"},"sourceKey":"comparison","destinationUnit":{"$ref":"30"},"destinationKey":"a","guid":"373b1bb1-4091-43e1-9c1b-adf8ad98277f","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"23"},"sourceKey":"output","destinationUnit":{"$ref":"30"},"destinationKey":"b","guid":"0bd319e4-1207-4620-8039-f9907ea618a8","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"value","destinationUnit":{"$ref":"12"},"destinationKey":"target","guid":"bf29c6cf-6858-4477-869b-5355bb5a6e01","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"30"},"sourceKey":"result","destinationUnit":{"$ref":"18"},"destinationKey":"condition","guid":"152b2039-d2bc-4527-be2e-af7423607dbe","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
     _objectReferences:
     - {fileID: 270374201}
     - {fileID: 270374201}
@@ -3827,7 +4105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"SFX
-      Volume Test","summary":null,"pan":{"x":158.5973,"y":141.5001},"zoom":0.8,"elements":[{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Slider","$type":"System.String"},"object":null},"position":{"x":-512.0,"y":-207.0},"guid":"dfabb134-090d-47fb-94ef-e4a55a6bb2ad","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"10"},{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-283.0,"y":-208.0},"guid":"b1fdb97f-0002-412c-b5ec-a75e8d309af8","$version":"A","$type":"Unity.VisualScripting.OnSliderValueChanged","$id":"12"},{"chainable":false,"parameterNames":[],"member":{"name":"Play","parameterTypes":[],"targetType":"UnityEngine.AudioSource","targetTypeName":"UnityEngine.AudioSource","$version":"A"},"defaultValues":{"target":null},"position":{"x":514.0,"y":-223.0},"guid":"3b9dcc42-a19c-4554-ba22-6a41a78ce310","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"defaultValues":{},"position":{"x":225.0,"y":-271.0},"guid":"0cc9a8ae-8643-4951-ba11-5f733df88db7","$version":"A","$type":"Unity.VisualScripting.If","$id":"18"},{"member":{"name":"isPlaying","parameterTypes":null,"targetType":"UnityEngine.AudioSource","targetTypeName":"UnityEngine.AudioSource","$version":"A"},"defaultValues":{"target":null},"position":{"x":-161.0,"y":253.0},"guid":"d03a7f35-eda8-4c74-82e6-e3c9ec6ff6b0","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"20"},{"defaultValues":{},"position":{"x":57.0,"y":156.0},"guid":"d5e9fa0e-c2a8-4799-b3e2-1476c2c6a05a","$version":"A","$type":"Unity.VisualScripting.Negate","$id":"23"},{"member":{"name":"time","parameterTypes":null,"targetType":"UnityEngine.Time","targetTypeName":"UnityEngine.Time","$version":"A"},"defaultValues":{},"position":{"x":-378.0,"y":46.0},"guid":"436b854b-c9ce-4d5e-80b3-be3ba7a3f991","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"25"},{"numeric":true,"defaultValues":{"b":{"$content":0.0,"$type":"System.Single"}},"position":{"x":-215.0,"y":41.0},"guid":"4d7055b1-cc9b-41f6-bb5d-63a29777ba7b","$version":"A","$type":"Unity.VisualScripting.Greater","$id":"28"},{"defaultValues":{},"position":{"x":119.0,"y":-114.0},"guid":"f1927077-b543-4728-a0e7-7671be4b50fa","$version":"A","$type":"Unity.VisualScripting.And","$id":"30"},{"sourceUnit":{"$ref":"12"},"sourceKey":"trigger","destinationUnit":{"$ref":"18"},"destinationKey":"enter","guid":"02bad109-689b-48ee-9bc0-cc00449fcc95","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"ifTrue","destinationUnit":{"$ref":"14"},"destinationKey":"enter","guid":"a4588bbf-c4ca-4eaa-b788-92fec0fe4dc4","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"value","destinationUnit":{"$ref":"12"},"destinationKey":"target","guid":"bf29c6cf-6858-4477-869b-5355bb5a6e01","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"20"},"sourceKey":"value","destinationUnit":{"$ref":"23"},"destinationKey":"input","guid":"3e886a20-0eac-4b35-96ad-5f0a0b30c54b","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"25"},"sourceKey":"value","destinationUnit":{"$ref":"28"},"destinationKey":"a","guid":"f588e72b-b03a-4042-9148-6b80aa403733","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"28"},"sourceKey":"comparison","destinationUnit":{"$ref":"30"},"destinationKey":"a","guid":"373b1bb1-4091-43e1-9c1b-adf8ad98277f","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"23"},"sourceKey":"output","destinationUnit":{"$ref":"30"},"destinationKey":"b","guid":"0bd319e4-1207-4620-8039-f9907ea618a8","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"30"},"sourceKey":"result","destinationUnit":{"$ref":"18"},"destinationKey":"condition","guid":"152b2039-d2bc-4527-be2e-af7423607dbe","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
+      Volume Test","summary":null,"pan":{"x":158.5973,"y":141.5001},"zoom":0.8,"elements":[{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Slider","$type":"System.String"},"object":null},"position":{"x":-512.0,"y":-207.0},"guid":"dfabb134-090d-47fb-94ef-e4a55a6bb2ad","$version":"A","$type":"Unity.VisualScripting.GetVariable","$id":"10"},{"coroutine":false,"defaultValues":{"target":null},"position":{"x":-283.0,"y":-208.0},"guid":"b1fdb97f-0002-412c-b5ec-a75e8d309af8","$version":"A","$type":"Unity.VisualScripting.OnSliderValueChanged","$id":"12"},{"chainable":false,"parameterNames":[],"member":{"name":"Play","parameterTypes":[],"targetType":"UnityEngine.AudioSource","targetTypeName":"UnityEngine.AudioSource","$version":"A"},"defaultValues":{"target":null},"position":{"x":514.0,"y":-223.0},"guid":"3b9dcc42-a19c-4554-ba22-6a41a78ce310","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"14"},{"defaultValues":{},"position":{"x":225.0,"y":-271.0},"guid":"0cc9a8ae-8643-4951-ba11-5f733df88db7","$version":"A","$type":"Unity.VisualScripting.If","$id":"18"},{"member":{"name":"isPlaying","parameterTypes":null,"targetType":"UnityEngine.AudioSource","targetTypeName":"UnityEngine.AudioSource","$version":"A"},"defaultValues":{"target":null},"position":{"x":-161.0,"y":253.0},"guid":"d03a7f35-eda8-4c74-82e6-e3c9ec6ff6b0","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"20"},{"defaultValues":{},"position":{"x":57.0,"y":156.0},"guid":"d5e9fa0e-c2a8-4799-b3e2-1476c2c6a05a","$version":"A","$type":"Unity.VisualScripting.Negate","$id":"23"},{"member":{"name":"time","parameterTypes":null,"targetType":"UnityEngine.Time","targetTypeName":"UnityEngine.Time","$version":"A"},"defaultValues":{},"position":{"x":-378.0,"y":46.0},"guid":"436b854b-c9ce-4d5e-80b3-be3ba7a3f991","$version":"A","$type":"Unity.VisualScripting.GetMember","$id":"25"},{"numeric":true,"defaultValues":{"b":{"$content":0.0,"$type":"System.Single"}},"position":{"x":-215.0,"y":41.0},"guid":"4d7055b1-cc9b-41f6-bb5d-63a29777ba7b","$version":"A","$type":"Unity.VisualScripting.Greater","$id":"28"},{"defaultValues":{},"position":{"x":119.0,"y":-114.0},"guid":"f1927077-b543-4728-a0e7-7671be4b50fa","$version":"A","$type":"Unity.VisualScripting.And","$id":"30"},{"sourceUnit":{"$ref":"12"},"sourceKey":"trigger","destinationUnit":{"$ref":"18"},"destinationKey":"enter","guid":"02bad109-689b-48ee-9bc0-cc00449fcc95","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"18"},"sourceKey":"ifTrue","destinationUnit":{"$ref":"14"},"destinationKey":"enter","guid":"a4588bbf-c4ca-4eaa-b788-92fec0fe4dc4","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"23"},"sourceKey":"output","destinationUnit":{"$ref":"30"},"destinationKey":"b","guid":"0bd319e4-1207-4620-8039-f9907ea618a8","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"value","destinationUnit":{"$ref":"12"},"destinationKey":"target","guid":"bf29c6cf-6858-4477-869b-5355bb5a6e01","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"20"},"sourceKey":"value","destinationUnit":{"$ref":"23"},"destinationKey":"input","guid":"3e886a20-0eac-4b35-96ad-5f0a0b30c54b","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"25"},"sourceKey":"value","destinationUnit":{"$ref":"28"},"destinationKey":"a","guid":"f588e72b-b03a-4042-9148-6b80aa403733","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"28"},"sourceKey":"comparison","destinationUnit":{"$ref":"30"},"destinationKey":"a","guid":"373b1bb1-4091-43e1-9c1b-adf8ad98277f","$type":"Unity.VisualScripting.ValueConnection"},{"sourceUnit":{"$ref":"30"},"sourceKey":"result","destinationUnit":{"$ref":"18"},"destinationKey":"condition","guid":"152b2039-d2bc-4527-be2e-af7423607dbe","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}}'
     _objectReferences: []
 --- !u!114 &1513681648
 MonoBehaviour:
@@ -4376,6 +4654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1594765729}
   - component: {fileID: 1594765730}
+  - component: {fileID: 1594765731}
   m_Layer: 5
   m_Name: Ready
   m_TagString: Untagged
@@ -4396,6 +4675,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 410823179}
+  - {fileID: 944852895}
   m_Father: {fileID: 91872854}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -4424,6 +4704,149 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1594765731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594765728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b067f0f173a85414d91b372144d6ede5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSource: {fileID: 944852896}
+  Clips:
+  - {fileID: 8300000, guid: aca065582c628af40b6f3308af2db1cd, type: 3}
+--- !u!1 &1663447308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1663447309}
+  - component: {fileID: 1663447310}
+  m_Layer: 0
+  m_Name: CompleteSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1663447309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663447308}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -480, y: -229.06691, z: 0}
+  m_LocalScale: {x: 0.6032045, y: 0.6032045, z: 0.6032045}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 361254842}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1663447310
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663447308}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 6849276846965121036, guid: adb45b35adf7dd643b335fd4fa82c8d3, type: 2}
+  m_audioClip: {fileID: 8300000, guid: aca065582c628af40b6f3308af2db1cd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1.76
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1683016252
 GameObject:
   m_ObjectHideFlags: 0
@@ -5965,7 +6388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3755587195476011155, guid: 9f3452aaa510b9744970100a32c2ff2f, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 47103
+      value: 4278242815
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
