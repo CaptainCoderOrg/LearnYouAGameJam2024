@@ -8,6 +8,7 @@ public class PlayerAbilityData : ScriptableObject
     public AnimationCurve JumpArch;
     public float JumpHeight = 2;
     public float JumpDuration = 1;
+    public float Speed = 12;
     public Material LiquidMaterial;
 
 }

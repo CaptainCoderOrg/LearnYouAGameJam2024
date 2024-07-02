@@ -7,6 +7,7 @@ public class DoorController : MonoBehaviour
 {
     public DoorController Other;
     public Animator Animator;
+    public bool StartOpen = false;
     public bool IsOpen
     {
         get => Animator.GetBool("isOpen");
@@ -18,6 +19,13 @@ public class DoorController : MonoBehaviour
     void Awake()
     {
         Animator = GetComponentInChildren<Animator>();
+    }
+    void Start()
+    {
+        if (StartOpen)
+        {
+            Open();
+        }
     }
 
     [Button("Open")]

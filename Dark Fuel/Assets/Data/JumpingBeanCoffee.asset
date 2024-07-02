@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38808a11cb0f1fc40a7e3cafb67b9496, type: 3}
-  m_Name: Coffee
+  m_Name: JumpingBeanCoffee
   m_EditorClassIdentifier: 
   JumpArch:
     serializedVersion: 2

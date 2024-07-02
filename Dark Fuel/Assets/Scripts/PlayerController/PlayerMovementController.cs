@@ -10,9 +10,9 @@ namespace CaptainCoder.DarkFuel
         public ControlSettingsData Controls;
         public Vector3 InputDirection { get; private set; }
         private PlayerComponents _playerComponents;
+        private PlayerAbilityData Ability => _playerComponents.Ability;
         private float ForwardAxis => Input.GetAxis("Vertical");
         private float RightAxis => -Input.GetAxis("Horizontal");
-        public float Speed = 20;
         // Start is called before the first frame update
         void Awake()
         {
@@ -52,8 +52,8 @@ namespace CaptainCoder.DarkFuel
         // Update is called once per frame
         void FixedUpdate()
         {
-            _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.WithXZ(InputDirection * Speed);
-            _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.ClampXZMagnitude(Speed);
+            _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.WithXZ(InputDirection * Ability.Speed);
+            _playerComponents.RigidBody.velocity = _playerComponents.RigidBody.velocity.ClampXZMagnitude(Ability.Speed);
             _playerComponents.ModelAnimator.SetFloat("Velocity", _playerComponents.RigidBody.velocity.XZ().normalized.magnitude);
         }
     }
